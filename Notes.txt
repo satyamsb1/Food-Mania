@@ -1,0 +1,33 @@
+#Day-2 Igniting out app 
+	- Things that work behind the scene and we dont know what happens
+	- Things tha happen when we use create react app.
+	- React cannot on individual level make our application fast; we need many packages to achive
+	that speed.
+
+	- Intro to npm;
+		- packages and dependencies are same.
+	- Bundler:-
+		- Minification, Dependency Management, Optimization etc;
+		- We are going to use parcel
+		- We make production ready app using bundler. 
+		- npm i -D parcel this is known as dev dependencies and used for development purposes.
+		- npm i parcel these are used in production also.
+			#Parcel (https://parceljs.org/)
+				- Dev Build
+				- Local Server
+				- HMR = Hot module Replacement
+				- File Watching Algorith which is written in C++
+				- Caching - For faster Builds
+				- Image Optimization
+				- Minification
+				- Bundling
+				- Compress
+				- Consistent Hashing
+				- Code splitting
+				- Differential Bundling -  for older versions of browsers
+				- Diagnostics
+				- Error Handling
+				- Tree shaking (Remove unused code)
+				- Different dev and prod bundles
+		- BrowsersList - Used to tell browsers which verisions app will run on 
+			- Offical Website (https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z)
