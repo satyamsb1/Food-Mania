@@ -31,3 +31,43 @@
 				- Different dev and prod bundles
 		- BrowsersList - Used to tell browsers which verisions app will run on 
 			- Offical Website (https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z)
+	
+#Day3 - Laying the foundation
+	- JSX
+		- JSX is not html in js JSX is diffrent from the html.
+		- You can call it has html-like or xml-like syntax
+		- const jsxHeading = <h1 id="heading">This is the jsx heading</h1> this is an react element this also forms a 
+		javascript object;
+		- JSX makes easy to create and read the code
+		- JS engine only understands the ecma(es6) script, Engine wont be able to read jsx (This is not valid pure js)
+		- Here, parcel helps us again. The code is first transpiled(converted to the code browsers can understand) 				before it goes to the js engine.
+		- Parcel dont do this transpilation process on its own it takes help from "BABEL".
+		- Babel is a package it is bought into the project when we install parcel;
+		- JSX --> React code is done by babel.
+		- First the JSX is converted to the React.createElement, then this element is converted to the JS object and 			then rendered on to the browser as html element.
+		- Babel also transpiles the new code to the older versions of the code so the browsers who support older 				versions of JS can understand.
+		- In jsx to give a class then we have to use className="XYZ" not class="XYZ".
+		- Names of Attibutes in jsx must be camel-cased.
+		- If we have to write jsx in multipl lines we have to wrap the code in paranthesis, Altought it is not necessary 
+		to use brackets if the code is written in single line.
+	
+	- React Component
+		- Everything in react is Component.
+		- Two types of components
+			1. Class based components (old way) uses JS classes
+			2. Functional components (new way) Uses JS functions
+		-*- Functional components
+			- Functional compoenent is nothing but a javascript function.
+			- Name should start from a capital letter. 
+			- Functional component is nothing but a js function which returns a jsx element i.e. an react element.
+			- Multiple ways to write a functional compoenent 
+				1. const HeadingComponent = () =>{
+					return <h1>This is a react functional Component</h1>;
+				};
+				2. const HeadingComponent = () => <h1>This is a react functional Component</h1>;  
+				3. const HeadingComponent = () => (
+					<h1>This is a react functional Component</h1>;  
+				);
+			- Component compostion is the process of using a component inside another component.
+			- In jsx if we use {We can code any javascript inside} angular brackets.
+			

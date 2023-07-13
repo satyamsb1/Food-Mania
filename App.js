@@ -1,25 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const parent = React.createElement(
-    "div",
-    {id : "parent"},[
-        React.createElement(
-        "div",
-        {id: "child"}, [
-            React.createElement("h1", {}, "H1 tag"),
-            React.createElement("h2", {}, "H2 tag")
-        ]),
-        React.createElement(
-            "div",
-            {id: "child2"}, [
-                React.createElement("h1", {}, "H1 tag"),
-                React.createElement("h2", {}, "H2 tag")
-            ])]
-    
+const Title= () => (
+    <h1 id="heading">
+        This is the jsx heading Title
+    </h1>
 );
 
-
-const heading = React.createElement("h1", {id : "heading"}, "Helllow world");
+const HeadingComponent = () =>(
+    <div className="container">
+        <Title/>    
+        <h1>This is a react functional Component</h1>
+    </div>
+);
+ 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(<HeadingComponent/>);
+/*
+Component can also be written like this;
+1. const HeadingComponent = () => <h1>This is a react functional Component</h1>;  
+2. const HeadingComponent = () => (
+    <h1>This is a react functional Component</h1>;  
+);
+ */
