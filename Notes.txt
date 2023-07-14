@@ -71,3 +71,18 @@
 			- Component compostion is the process of using a component inside another component.
 			- In jsx if we use {We can code any javascript inside} angular brackets.
 			
+#Day4 - Talk is cheap, show me the code
+	- Building a food delivery app using react
+	- Component our app will have
+		- Header
+			- logo
+			- Nav-items
+		- Body
+		  	- Search
+			- Restaurant container
+				- RestaurantCard
+		Footer
+			- Copyright
+			- Links
+			- Address
+			- Contact 
