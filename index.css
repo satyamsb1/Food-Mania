@@ -27,11 +27,26 @@
 }
 
 .res-card{
+    padding: 5px;
     width:200px;
-    height : 300px;
+    height : auto;
+    margin: 5px;;
+    background-color: #f0f0f0;
+}
+.res-card:hover{
     border: 1px solid black;
+    cursor: pointer;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .search{
     padding: 10px;
 }   
+
+.res-logo{
+    width: 100%;
+}

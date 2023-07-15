@@ -40,12 +40,12 @@
 		javascript object;
 		- JSX makes easy to create and read the code
 		- JS engine only understands the ecma(es6) script, Engine wont be able to read jsx (This is not valid pure js)
-		- Here, parcel helps us again. The code is first transpiled(converted to the code browsers can understand) 				before it goes to the js engine.
+		- Here, parcel helps us again. The code is first transpiled(converted to the code browsers can understand) before it goes to the js engine.
 		- Parcel dont do this transpilation process on its own it takes help from "BABEL".
 		- Babel is a package it is bought into the project when we install parcel;
 		- JSX --> React code is done by babel.
-		- First the JSX is converted to the React.createElement, then this element is converted to the JS object and 			then rendered on to the browser as html element.
-		- Babel also transpiles the new code to the older versions of the code so the browsers who support older 				versions of JS can understand.
+		- First the JSX is converted to the React.createElement, then this element is converted to the JS object and then rendered on to the browser as html element.
+		- Babel also transpiles the new code to the older versions of the code so the browsers who support older versions of JS can understand.
 		- In jsx to give a class then we have to use className="XYZ" not class="XYZ".
 		- Names of Attibutes in jsx must be camel-cased.
 		- If we have to write jsx in multipl lines we have to wrap the code in paranthesis, Altought it is not necessary 
@@ -86,3 +86,12 @@
 			- Links
 			- Address
 			- Contact 
+	- Props
+		- Props are just normal arguments for the component/function.
+	- Config Driven UI 
+		-  When you build real a world application so you want should your website work in many country or many place we control our fontend it is known as using Config-Driven UI
+	- Conclusion
+		build the reusable restaurantcard component
+		Intro to Swiggy API
+
+		 
