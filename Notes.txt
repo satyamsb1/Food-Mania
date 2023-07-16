@@ -94,4 +94,14 @@
 		build the reusable restaurantcard component
 		Intro to Swiggy API
 
-		 
+#Day5 - Lets get hooked
+	-Export and imports
+		- Default export
+			export default component
+			import Component from "path";
+		- Named export/imports
+			export const component;
+			import {Component} from "path";
+	
+	- React Hooks
+		- 
