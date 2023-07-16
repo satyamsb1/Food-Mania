@@ -104,4 +104,17 @@
 			import {Component} from "path";
 	
 	- React Hooks
-		- 
+		- Normal JS function, These functions have diff superpowers.
+		- Two most used Hooks	
+			- useState(); Superpowerful state variables in react
+			- useEffect(); 
+		- Whenever the state variable updates, react rerenders that particular component;
+		- this is performed with the help of DOM manipulation which is one of the core feature of react
+
+		- Reconciliation Algorithm (React Fiber)
+			- Virtual DOM is a representation of actual DOM. i.e. React elements
+		- Diff Algorithm 
+			- Finds out difference between two virtual dom i.e. Old one and the new one.
+			- And then those UI changes are updated
+
+			- react has virtual DOM and Does efficient DOM manipulation. Thats why React is fast. 
