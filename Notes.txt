@@ -116,5 +116,45 @@
 		- Diff Algorithm 
 			- Finds out difference between two virtual dom i.e. Old one and the new one.
 			- And then those UI changes are updated
-
 			- react has virtual DOM and Does efficient DOM manipulation. Thats why React is fast. 
+
+#Day6 - Exploring the world.
+	- Monolithic architecture
+		- A monolithic architecture refers to a software application design where all the components and features of the application are tightly integrated and deployed as a single, indivisible unit.
+	- Microservices architecture
+		- Microservices architecture is an architectural style that structures an application as a collection of small, loosely coupled, and independently deployable services.
+		- These Microservices can used diff tech stack for diff types of services.
+		- Services are independent of each other but are loosely coupled.
+	
+	- API Calling
+		- Loading the page -> Rendering the page -> Making API call -> Again Rendering.
+	
+	- useEffect() hook 
+		- 2 arguments	
+			- Arrow function which is call back function.
+			- Dependency Array.
+		- First react will render the compoenent and then it will call the callback function from the useEffect hook.
+		- Thats why we fetch Our data inside useEffect hook.
+
+	- Conditional rendering
+		- Rendering of the page on the basis of a condition is known as conditional rendering.
+
+	- If a useState() hook is a constant variable how does it get updated?
+		- const [btnName, setBtnName] = useState("Login");
+		when we use setBtnName the component is re rendered and this time the btnName is a new variable with the updated value, Thats why although the useState() hook is a constant variable the value can be changed.
+
+	- Search Function
+		- Create a new local state variable first and then bind it to the input-box.
+		- As soon as the input changes we'll have to update the state variable.
+		- We will use onchange handler
+			onChange((e)=>{
+				setSearchText(e.target.value);
+			})
+		- With every charachter we type in the input the compoenent is re-rendered. As the state variable is updated with every input we type.
+		i.e react triggers a Reconciliation cycle per every input.
+
+		- We use multiple state variables to keep the data as when we filter out the searched data and search again we search within previously filtered data to avoid this we keep filtering from the original state variable which is not yet filtered.
+
+
+
+		- it is important to know why things dont work in certain way to understand how they work.
