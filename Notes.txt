@@ -156,5 +156,62 @@
 		- We use multiple state variables to keep the data as when we filter out the searched data and search again we search within previously filtered data to avoid this we keep filtering from the original state variable which is not yet filtered.
 
 
+#Day7 - Finding the path
+	- useEffect()
+		- If we do not specify the dependency array useEffect is called at initial component render only(just once).
+		- If there is no dependency array, useEffect is called at every component render.
+		- When we mention something in the dependency array it only changes when the dependency changes.
+	- useState()
+	 	- Never use useState() outside functional components.
+		- Never use it in if else condition.
+		- Never use it in for loops and functions.
+		- This rules apply for all state variables.
+		- 
+	
+	- Routing in React app.
+		- Install react router
+			npm i react-router-dom
+		- To create a routing configuration we have to import { createBrowserRouter } from "react-router-dom";
+		- What is routing configuration
+			- Specification of what will happen on a specific route
+			- Config 
+			const appRouter = createBrowserRouter([
+    		{
+        		path: "/about",
+        		element: <About/>,
+    		},])
 
-		- it is important to know why things dont work in certain way to understand how they work.
+
+		- After specifying the configuration we have to import another component from "react-router-dom" called RouterProvider.
+		- We pass this appRouter in root.render with the help of RouterProvider. Where the appRouter is passed as an arguments
+			root.render(<RouterProvider router={appRouter}/>);
+
+		- useRouteError()
+			- this is the hook which is provided by react-router-dom to us.
+			- This hook provide us with an error description.
+					const err = useRouteError();
+		
+		- Outlet 
+			We use this Component to load the children component while routing in the app.
+
+		- Problem with the anchor tags
+			- The anchor tags reloads entire page when it is clicked.
+			- Disrupts the user experience and can result in a slower page load time.
+			- As react is used to create  Single page applications, this needs to be avoided.
+
+			- To counter this problem react-router-dom provides us with an incredicle component which is <Link>.
+			- Link component works exactly the same as the anchor tag.
+			- Syntax is <Link to="/contact">Contact us</Link>
+			- Link just refreshes the component
+		
+		- Two types of Routing
+			- Client side routing
+				No network call is made, all the components are already loaded in the app.
+			- Server side routing
+				Network call is made and the component is fetched from the server.
+		
+		- Single page applications(SPA)
+			- This is implemented via client side routing.
+			- React Router allows developers to define different routes within the application and renders the appropriate components based on the current URL, without triggering a full page reload.
+
+		- 
