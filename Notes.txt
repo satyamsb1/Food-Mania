@@ -214,4 +214,42 @@
 			- This is implemented via client side routing.
 			- React Router allows developers to define different routes within the application and renders the appropriate components based on the current URL, without triggering a full page reload.
 
-		- 
+
+#Day8 - Let's get Classy.
+	- Class Based Components 
+		- Just like an functional component is an function which returns a peice of JSX, Class based components are the classes which renders piece of JSX code.
+		- These are less maintainable, have more and messy code.
+		- they are no longer used.
+		- Now a days we can do almost Everything with the help of funtional compoenent.
+		- Syntax of the class based Component
+			class ComponentName extends React.Component{
+				render(){
+					return (
+						JSX goes here
+					)
+				}
+			}
+		- React.Component is a property of react.
+
+	- Props in class based components
+		- Props are passed in a same way as they are passed in functinal components, But the method of using it deffers.
+		- We have to use the constructor of the class for the same purpose.
+			constructor(props){
+				super(props);
+			} 
+			this code goes into the class component.
+
+			while using this props we have to use the this key world
+				for eg. {this.props.name}
+		- What is super(props)
+
+
+
+		- How do we create state varibales 
+			this.state = { //This code goes into the constructor of component.
+				count: 0,
+			};
+			<h1>Count: {this.state.count}</h1>
+
+		- Never update the state variable directly.
+		- React has provided us with an important function this.setState({}). This can be used anywhere inside the class to update the value of state variables. 
