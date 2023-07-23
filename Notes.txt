@@ -253,3 +253,59 @@
 
 		- Never update the state variable directly.
 		- React has provided us with an important function this.setState({}). This can be used anywhere inside the class to update the value of state variables. 
+
+		- React Class based component lifeCycle
+			- Constructor -> render() -> componentDidMount() 
+
+		- Async 
+			- While fetching api data which can be pretty time consuming, We dont want out code to wait for the data to be fetched. Instead while the data is being processed the other tasks could get execute.
+
+		- In class based components the api call is made in compoenentDidMount(), Just like we use useEffect in functional components.
+
+		- React lifeCycle
+			- Link https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+			- First the constructor will be called and then the render will be called after the DOM updation the compoenentDidMount() is called.
+			-If we use this analogy if there are multiple class components first react will patch the render method of all the components and then go it will call for the compoenentDidMount() method. this is the optimisation done by react. 
+			- updation of the dom is an expensive task, Thats why react patches it up together.
+
+				- parent constructor
+				- parent render
+					- first child constructor
+					- first child render
+					- second child constructor
+					- second child render
+
+					  - <DOM manipulation happens here>
+					- first child componentDidMount
+					- second child componentDidMount
+				- parent componentDidMount
+				
+			- Api fetching in Class components
+				- Carried out in componentDidMount
+				- State variables are created with the default values and can be updated using this.setState({}); 
+				- First react will render the state variables with the default values during the render phase.
+				- React updated the dom with some dummy data or default values of the state variables.
+				- Now the componentDidMount is called and the api call is made.
+				- With the setState() inside the componentDidMount method the upadtion (reconciliation) processure begins.
+				- The state varibles are updated, then the render function is rendered once again. The state has been updated with new values.
+				- React after the execution of the render function, the dom is updated again.
+				- componentDidUpdate is called after the render process.
+				- constructor -> render -> compoenentDidMount -> render -> componentDidUpdate
+
+				- componentWillUnmount will be called when we take out the data or change the page, if we leave the page.
+
+				- If we donot specify the dependency array in useEffect the useEffect will be called everytime the component is rendered.
+				- In class component componentDidMount is only called once later componentDidUpdate is called everytime there is any change. Hence useEffect is not same as componentDidMount.
+
+
+				- If there is a setInterval in out compoenentDidMount, when we leave the page it is still working in the background which results in performance loss, that's why we use compoenentWillUnmount for the cleaning process.
+
+
+			-- Unmounting phase in useEffect;
+				useEffect(()=>{
+					this is useEffect;
+
+					return()=>{
+						//This return acts as componentWillUnmount in useEffect, this function will invoke while we leave our page so all the cleaning process such as clearing intervals can be done here.
+					}
+				},[]);
