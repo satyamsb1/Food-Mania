@@ -1,9 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+// import useListOfRestaurants from "../utils/useListOfRestaurants";
 
 const Body = () => {
+    // const [searchText, setSearchText] = useState("");
+    // const listOfRestaurants = useListOfRestaurants();
+    // const [filteredRestaurant, setFilteredRestaurant] = useState(listOfRestaurants);
+
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -19,6 +25,14 @@ const Body = () => {
         setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
     };
 
+    const onlineStatus = useOnlineStatus();
+
+    if(!onlineStatus){
+        return( 
+        <h1>
+            Looks like you are offline please try again!!!
+        </h1>
+    )};
 
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
@@ -40,11 +54,11 @@ const Body = () => {
                 <button className="filter-btn" 
                 onClick= {()=>{
                     //Filter code here 
-                    const fileredList = listOfRestaurants.filter((res)=>res.data.avgRating > 4
-                    );
-                    setFilteredRestaurant(fileredList);
-                    console.log(listOfRestaurants);
-                }}>
+                        const fileredList = listOfRestaurants.filter((res)=>res.data.avgRating > 4
+                        );
+                        setFilteredRestaurant(fileredList);
+                        console.log(listOfRestaurants);
+                    }}>
                     Top Rated Restaurants
                 </button>
                 {console.log("rendered")}

@@ -309,3 +309,24 @@
 						//This return acts as componentWillUnmount in useEffect, this function will invoke while we leave our page so all the cleaning process such as clearing intervals can be done here.
 					}
 				},[]);
+
+#Day9 - Optimizing our app
+	- Custom Hooks
+		- We can make our own custom hooks which will be dedicated for specifuc purpose.
+		- As we build our restaurant menu card with the help of custom hook.
+		- We also build a feature if an user is offline or online 
+			- We added an event listner for the same.
+		
+	- Optimising (bundling)
+
+	- The idea is to bundle the features and resourses required to run the feature to be bundled together.
+
+	- Lazy loading
+		- This function is provided us by react.
+		- Only when we require resources they are loaded onto the web browser.
+		- At first the files which are lazy loaded are not available. 
+		- React is so fast if we clicked on the link which triggers the fetching of data, it tries to load the resourse which are not yet been loaded or imported. This lead to an error.
+		- For handling this type of error, react provides us Suspense function.
+
+		This feature comes handy when the size of the compoenent increases and is hectic to load.
+		So such components can be loaded when required reducing the unwanted fetching of the resourse.
