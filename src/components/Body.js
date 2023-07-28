@@ -21,10 +21,10 @@ const Body = () => {
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards)
-        setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
+        setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
-
+    console.log(listOfRestaurants);
     const onlineStatus = useOnlineStatus();
 
     if(!onlineStatus){
@@ -45,7 +45,7 @@ const Body = () => {
                         console.log(searchText);
 
                         const filteredRestaurant=listOfRestaurants.filter((res)=>
-                            res?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+                            res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
                         )
                         setFilteredRestaurant(filteredRestaurant);
 
@@ -54,10 +54,9 @@ const Body = () => {
                 <button className="filter-btn" 
                 onClick= {()=>{
                     //Filter code here 
-                        const fileredList = listOfRestaurants.filter((res)=>res.data.avgRating > 4
+                        const fileredList = listOfRestaurants.filter((res)=>res.info.avgRating > 4
                         );
                         setFilteredRestaurant(fileredList);
-                        console.log(listOfRestaurants);
                     }}>
                     Top Rated Restaurants
                 </button>
@@ -65,7 +64,7 @@ const Body = () => {
             </div>
                 <div className="res-container">
                    {filteredRestaurant.map((restaurant) => 
-                        <Link key = {restaurant.data.id} to = {"/restaurant/"+restaurant.data.id}>
+                        <Link key = {restaurant.info.id} to = {"/restaurant/"+restaurant.info.id}>
                                 <RestaurantCard  resData= {restaurant}/>
                         </Link>
                     )}
