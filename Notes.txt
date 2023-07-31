@@ -378,3 +378,10 @@
 			justify-around
 			justify-evenly
 		items-center - aligns items to the center.
+
+#Day11 - Data is the new online
+
+	- Higher Order component
+		-higher order components are just functions
+		-They take a component and return another component which is the enhancd version of the input component.
+		-Making modified components.
