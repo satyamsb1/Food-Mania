@@ -385,3 +385,9 @@
 		-higher order components are just functions
 		-They take a component and return another component which is the enhancd version of the input component.
 		-Making modified components.
+
+	- UI layer and DATA layer in React
+		- UI 
+			JSX
+		- Data
+		 	states, props, local varibles, js we write in jsx which is modifying the data layer.

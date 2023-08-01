@@ -21,7 +21,7 @@ const Body = () => {
         setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
-    console.log(listOfRestaurants);
+    // console.log(listOfRestaurants);
     const onlineStatus = useOnlineStatus();
 
     if(!onlineStatus){
