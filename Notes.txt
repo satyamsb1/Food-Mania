@@ -391,3 +391,9 @@
 			JSX
 		- Data
 		 	states, props, local varibles, js we write in jsx which is modifying the data layer.
+
+
+	- Controlled and uncontrolled components
+		- When an components has its own state, It was uncontrolled component. It can work and function without any outside influence.
+
+	- Props drilling
