@@ -1,5 +1,3 @@
-//Namaste React
-
 #Day-2 Igniting out app - Things that work behind the scene and we dont know what happens - Things tha happen when we use create react app. - React cannot on individual level make our application fast; we need many packages to achive
 that speed.
 
@@ -38,7 +36,6 @@ to use brackets if the code is written in single line. - React Component - Every
 return <h1>This is a react functional Component</h1>;
 }; 2. const HeadingComponent = () => <h1>This is a react functional Component</h1>;  
  3. const HeadingComponent = () => (
-
 <h1>This is a react functional Component</h1>;  
  ); - Component compostion is the process of using a component inside another component. - In jsx if we use {We can code any javascript inside} angular brackets.
 #Day4 - Talk is cheap, show me the code - Building a food delivery app using react - Component our app will have - Header - logo - Nav-items - Body - Search - Restaurant container - RestaurantCard
@@ -222,3 +219,65 @@ JSX goes here
 
     	This feature comes handy when the size of the compoenent increases and is hectic to load.
     	So such components can be loaded when required reducing the unwanted fetching of the resourse.
+
+#Day10 - Jo dikhta hai, wo bikta hai! - Tailwind CSS - Rapidly build modern websites without ever leaving your HTML/JSX - Generic frameworks works with any other framework not just react.
+Installing Tailwind CSS into our react project - npm install -D tailwindcss postcss
+This is used to install taiwind package into react
+postcss is nothing but a developement tool used to transformer CSS with javascript.
+
+    	- npx tailwindcss init
+    		initializing tailwind repo in our project
+    		creates tailwind.config.js
+    		we need to edit the content element of tailwind.config.js to the types of file in which we will be using out tailwind
+
+    	- Config file for the postcss.
+    		make a new file and name it as .postcssrc
+    		Parcel needs postcssrc to read tailwind.
+
+    - Tailwind css gives you ready to use classes.
+    - Dynamic Classes in tailwind css
+    	we can make our own dynamic classes in Tailwind
+    		eg w-[200px] here we mentioned how much width we need by mentioning it in the square brackets.
+
+    lightweight
+     - When the parecl will make the bundle of the files it will only load the classes that we have used which makes it lightweight.
+
+    - Common CSS classes
+    	p - this is padding
+    	px - adding on the horizontal axis i.e. left and right.
+    	py - padding on the veritcal axis i.e. top and bottom.
+    	m - margin
+    	mx - horizontal axis
+    	my - vertical axis
+
+    	flex - same as display flex
+    	flex wrap - this makes columns and rows which fit according to the size of the display
+    	border - adding border to the html element
+    	rounded-"value" - this add rounded border to the html element, value can be sm, lg, md, etc.
+    	hover:proerty-value - behavior of the element after hovering on it.
+    	hover:scale-125 - this changes the size after hovering on the element. 100 is the orignal size of the element before.
+    	hover:text-property-value - after hovering the property changes with given value
+    	bg-color-value - this is used to change the background color.
+    	justify-between - same as justify-content: space-between;
+    		justify-around
+    		justify-evenly
+    	items-center - aligns items to the center.
+
+#Day11 - Data is the new online
+
+    - Higher Order component
+    	-higher order components are just functions
+    	-They take a component and return another component which is the enhancd version of the input component.
+    	-Making modified components.
+
+    - UI layer and DATA layer in React
+    	- UI
+    		JSX
+    	- Data
+    	 	states, props, local varibles, js we write in jsx which is modifying the data layer.
+
+
+    - Controlled and uncontrolled components
+    	- When an components has its own state, It was uncontrolled component. It can work and function without any outside influence.
+
+    - Props drilling
