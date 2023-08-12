@@ -8,7 +8,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () =>{
 
     const {resId}= useParams();
-
+    const dummy = "This is dummy data";
     const resInfo = useRestaurantMenu(resId);
 
     const [showIndex, setShowIndex] = useState(null);
@@ -32,6 +32,7 @@ const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
                     showItems={index === showIndex && true}
                     // {onClick(handleClick)}
                     setShowIndex={() => setShowIndex(index)}
+                    dummy = {dummy}
                 />
             )}
         </div>

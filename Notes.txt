@@ -397,3 +397,19 @@
 		- When an components has its own state, It was uncontrolled component. It can work and function without any outside influence.
 
 	- Props drilling
+		- When a component needs to pass data to its children component the concept of props drillig is used
+		- The data is passed from one component to another component inside the props.
+		- This is not a efficient way to pass data down the component tree as many of the components do not use that particular data and just pass it to the children component.
+
+	- React Context
+		- Used to avoid the use of prop drillig.
+		- React context is the process to store any information which can be needed to be accessed globally.
+		- We create a designated context file in which we creat a context using createContext.
+		- Export it later while using it we have to use an hook known as useContext(); in bracket we have to pass on the name of the context which we need to access.
+			- Accessing the react context in class based components 
+				- First we import our context.
+				- We will need to use 
+				<Context_name.Consumer>
+					here we can access a callback function
+					{(data)=>console.log(data)}  //This is the data which is stored in the context
+				</Context_name.Consumer>
