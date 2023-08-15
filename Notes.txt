@@ -413,3 +413,33 @@
 					here we can access a callback function
 					{(data)=>console.log(data)}  //This is the data which is stored in the context
 				</Context_name.Consumer>
+
+
+#Day12 Let's build our store
+	Redux
+		- Redux is not mandatory.
+		- React and redux are two different libraries.
+		- Redux should only be used when the application is very large scale(use wisely).
+		- Redux lirbary is used in state Management.
+		- Redux is like a bucket which stores and manages all the states of the application.
+
+
+	Redux lifeCycle
+		- Redux store is a big js object and kept in the global centrak place;
+		- The storage in redux is known as the store. The store is further partioned in to numorous slices.
+		- Slices are nothing but the storage for diffent functions in our webapp for eg. Cart functionality will have a separate slices
+		
+		- We cannot directly modify the slice from the redux store. We have to go through  a dedicated process.
+		- First when we click on the add button to add an item to the cart it dispatches an action.
+		- The action calls for the reducer function which updates the slice in the redux store.
+		- This is how we modify the data in the redux store slice.
+
+		Retrival of the data
+
+		- This process reads the data from the redux slice and updates the component with the updated data at the userlevel.
+		- We use selector for the same.
+		- Selector will read the data from the redux slice and update the component.
+		- Subscribing to the store 
+			When the component and the redux store are in sync / When data is updated in the store it reflects on the user level that is the component is updated automatically.
+
+	This is the Redux life cycle and all you need to know about it's architecture.
