@@ -11,7 +11,7 @@ const Body = () => {
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-    const {loggedInUser, setUserName} = useContext(UserContext);
+    // const {loggedInUser, setUserName} = useContext(UserContext);
     useEffect(()=>{
         fetchData();
     }, []);
@@ -59,18 +59,18 @@ const Body = () => {
                 </button>
 
 
-                <label>UserName : </label>
+                {/* <label>UserName : </label>
                 <input className="border border-black p-2" 
                 value={loggedInUser}
                 onChange={(e)=>setUserName(e.target.value)}
-                />
-                </div>
+                />*/}
+                </div> 
                 
             </div>
                 <div className="flex flex-wrap">
-                   {filteredRestaurant.map((restaurant) => 
-                        <Link key = {restaurant.info.id} to = {"/restaurant/"+restaurant.info.id}>
-                            {restaurant.info.sla.deliveryTime <=20 ? <RestaurantCardPromoted resData= {restaurant}/> : 
+                   {filteredRestaurant?.map((restaurant) => 
+                        <Link key = {restaurant?.info?.id} to = {"/restaurant/"+restaurant?.info?.id}>
+                            {restaurant?.info?.sla?.deliveryTime <=20 ? <RestaurantCardPromoted resData= {restaurant}/> : 
                                 <RestaurantCard  resData= {restaurant}/>}
                         </Link>
                     )}
