@@ -443,3 +443,12 @@
 			When the component and the redux store are in sync / When data is updated in the store it reflects on the user level that is the component is updated automatically.
 
 	This is the Redux life cycle and all you need to know about it's architecture.
+
+	Actions:
+		Think of actions as messages that tell your application what happened. They're like notes you write to yourself, saying things like "Hey, the user clicked a button!" or "The data from the server just arrived!" Actions don't do anything by themselves; they're just descriptions of events that took place.
+
+	Reducers:
+		Reducers are like the handlers for those messages (actions) you wrote. Imagine you have a bunch of different notes about things that happened, and you want to figure out how to update your room based on those notes. Each reducer is like a person responsible for handling a specific type of note. They take the current state of your room and the note, and then they figure out how the room should change. So, reducers are like the people who make changes to your room based on the notes you wrote.
+
+	Slice:
+		A slice is like a small part of your room. Imagine that your room has different sections, like a reading corner, a gaming area, and a study desk. Each section can be managed separately. A slice in Redux is like one of these sections. It's a bundle that includes both the actions that can happen in that section and the reducer that knows how to update that part of the room based on those actions. So, a slice helps you organize your notes and the people who handle them for specific parts of your application.
